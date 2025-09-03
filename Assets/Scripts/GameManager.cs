@@ -1,14 +1,14 @@
-
-
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public ColorDisplay colorDisplay; // RenkCerceve'yi yöneten script
     public ButtonSpawner buttonSpawner; // Butonlarý yöneten script
+    public ScoreSystem scoreSystem; // Skor sistemini yöneten script
 
     private string currentTargetColor; // Þu anki hedef renk
     private string previousTargetColor; // Bir önceki hedef renk
+    private float reactionStartTime; // Tepki süresi
 
     void Start()
     {
@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public void StartNewRound()
     {
+        reactionStartTime = Time.time;
+
         // Yeni butonlarý oluþtur
         buttonSpawner.SpawnUniqueButtons();
 
@@ -64,11 +66,17 @@ public class GameManager : MonoBehaviour
     {
         if (colorName == currentTargetColor)
         {
+            float reactionTime = Time.time - reactionStartTime;
+            bool isCorrect = true;
+
+            scoreSystem.CalculateScore(isCorrect, reactionTime);
             Debug.Log("Doðru cevap!");
             StartNewRound(); // Yeni tur baþlat
         }
         else
         {
+            bool isCorrect = false;
+            scoreSystem.CalculateScore(isCorrect, reactionStartTime);
             Debug.Log("Yanlýþ cevap!");
         }
     }
