@@ -10,17 +10,17 @@ Players must select the correct color while ignoring conflicting textual informa
 Stroopa/
 │
 ├── Assets/
-│ ├── Art/ # Visual assets (sprites, UI elements)
-│ ├── Audio/ # Sound effects and music
-│ ├── Prefabs/ # Prefabricated objects
-│ ├── Scenes/ # Unity scenes (.unity files)
-│ ├── Scripts/ # C# gameplay scripts
-│ └── Settings/ # Configuration and game-specific settings
+│   ├── Art/       # Visual assets (sprites, UI elements)
+│   ├── Audio/     # Sound effects and music
+│   ├── Prefabs/   # Prefabricated objects
+│   ├── Scenes/    # Unity scenes (.unity files)
+│   ├── Scripts/   # C# gameplay scripts
+│   └── Settings/  # Configuration and game-specific settings
 │
-├── Packages/ # Unity package references
+├── Packages/        # Unity package references
 ├── ProjectSettings/ # Unity project settings
-├── .gitignore # Git ignore rules for Unity projects
-└── README.md # Project documentation
+├── .gitignore       # Git ignore rules for Unity projects
+└── README.md        # Project documentation
 
 ---
 
