@@ -7,7 +7,7 @@ Players must select the correct color while ignoring conflicting textual informa
 ---
 
 ## 📂 Project Structure
-'''
+```
 Stroopa/
 │
 ├── Assets/
@@ -22,7 +22,8 @@ Stroopa/
 ├── ProjectSettings/ # Unity project settings
 ├── .gitignore       # Git ignore rules for Unity projects
 └── README.md        # Project documentation
-'''
+```
+
 ---
 
 ## 🚀 Features
