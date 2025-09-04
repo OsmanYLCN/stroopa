@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     private string previousTargetColor; // Bir önceki hedef renk
     private float reactionStartTime; // Tepki süresi
 
+    public GameObject gameUI; // Oyun UI'sý
+    public TextMeshProUGUI GameOverText;
     void Start()
     {
         StartNewRound();
@@ -78,6 +81,26 @@ public class GameManager : MonoBehaviour
             bool isCorrect = false;
             scoreSystem.CalculateScore(isCorrect, reactionStartTime);
             Debug.Log("Yanlýþ cevap!");
+        }
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Oyun sona erdi!");
+
+        if (gameUI != null)
+        {
+            gameUI.SetActive(false);
+        }
+
+        if (GameOverText != null)
+        {
+            GameOverText.gameObject.SetActive(true);
+            GameOverText.text = "Game Over!\nFinal Score: " + scoreSystem.GetTotalScore(); // Final skoru göster
+        }
+        else
+        {
+            Debug.LogWarning("Game Over Text atanmadý!");
         }
     }
 }

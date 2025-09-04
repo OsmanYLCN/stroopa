@@ -1,8 +1,5 @@
-// 3.09.2025 AI-Tag
-// This was created with the help of Assistant, a Unity Artificial Intelligence product.
-
 using UnityEngine;
-using TMPro; // TextMeshPro için gerekli
+using TMPro;
 
 public class ScoreSystem : MonoBehaviour
 {
@@ -14,7 +11,6 @@ public class ScoreSystem : MonoBehaviour
     {
         int score = 0;
 
-        // Doðru veya yanlýþ cevaba göre puan ekle/çýkar
         if (isCorrect)
         {
             score += 100;
@@ -24,7 +20,7 @@ public class ScoreSystem : MonoBehaviour
             score -= 50;
         }
 
-        // Tepki süresine göre hýz bonusu ekle
+        // Tepki süresine göre hýz bonusu
         if (reactionTime <= 1f)
         {
             score += 50;
